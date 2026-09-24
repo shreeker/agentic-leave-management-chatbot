@@ -1,0 +1,41 @@
+[
+  {
+    "name": "simple vacation request",
+    "employee_id": "E1001",
+    "input": "I want vacation from 2026-10-12 to 2026-10-14 for a family trip.",
+    "expected_properties": [
+      "agent identifies vacation leave",
+      "agent verifies working days",
+      "agent verifies balance",
+      "agent creates a request when sufficient evidence exists"
+    ]
+  },
+  {
+    "name": "policy question",
+    "employee_id": "E1001",
+    "input": "Can I take a 7 working day vacation?",
+    "expected_properties": [
+      "agent retrieves vacation policy",
+      "agent does not invent policy"
+    ]
+  },
+  {
+    "name": "insufficient information",
+    "employee_id": "E1001",
+    "input": "I need some leave next month.",
+    "expected_properties": [
+      "agent asks for dates/type when necessary",
+      "agent does not create a request"
+    ]
+  },
+  {
+    "name": "calendar-aware reasoning",
+    "employee_id": "E1001",
+    "input": "Take vacation from 2026-10-12 to 2026-10-20.",
+    "expected_properties": [
+      "agent uses calendar/working-day tools",
+      "agent recognizes holidays",
+      "agent does not count all calendar days as leave"
+    ]
+  }
+]
